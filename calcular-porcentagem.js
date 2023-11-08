@@ -1,17 +1,11 @@
-const btnCalcular = document.querySelector(".btn");
-btnCalcular.addEventListener("click", calcularPorcentagem);
-
 function calcularPorcentagem() {
   const quantidadeVideos = Number(document.querySelector("#quantidade-videos").value);
   const tipoConsulta = document.querySelector("input[name='tipo-consulta']:checked").value;
 
   const porcentagem = calcularPorcentagem(quantidadeVideos, tipoConsulta);
 
-  const resultadoPorcentagem = document.querySelector(".porcentagem");
-  resultadoPorcentagem.textContent = porcentagem.toFixed(3);
-
-  const resultadoConsulta = document.querySelector(".resultado");
-  resultadoConsulta.textContent = tipoConsulta;
+  document.querySelector("#porcentagem").textContent = porcentagem.toFixed(3);
+  document.querySelector("#resultado").textContent = tipoConsulta;
 }
 
 function calcularPorcentagem(quantidadeVideos, tipoConsulta) {
